@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'AlKaria_AlAmina' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+    pod 'Alamofire'
+    pod 'Kingfisher'
+    pod 'OTPFieldView'
+    pod 'lottie-ios'
+  # Pods for AlKaria_AlAmina
+
+  target 'AlKaria_AlAminaTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'AlKaria_AlAminaUITests' do
+    # Pods for testing
+  end
+
+end
