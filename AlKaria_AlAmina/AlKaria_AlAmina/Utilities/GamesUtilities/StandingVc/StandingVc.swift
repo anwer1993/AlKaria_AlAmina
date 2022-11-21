@@ -90,6 +90,7 @@ extension StandingVc: UITableViewDelegate, UITableViewDataSource {
         guard let cell  = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as? PlayerCell else {
             return UITableViewCell()
         }
+        cell.setupCell(scoreModel: topScore[indexPath.row], index: indexPath.row)
         return cell
     }
     

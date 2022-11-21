@@ -18,8 +18,10 @@ extension PuzzleGameListVc {
                 guard let strongSelf = self else {return}
                 strongSelf.hideLoader()
                 if let data = res.data, res.result  == true{
+                    
                     strongSelf.addChildVc(strongSelf.standingVc) {
                     }
+                    strongSelf.standingVc.topScore = data
                 } else {
                     strongSelf.showAlert(for: "")
                 }

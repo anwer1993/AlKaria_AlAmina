@@ -11,7 +11,7 @@ class Utilities {
     
     static var loaderViewTag = 10000
     
-    static var baseUrl = "http://dev.safer-kids.net/"
+    static var baseUrl = "https://safer-kids.net/public/"
     
     static var STORIES_AND_LESSON = "قصص و عبر مفيدة"
     static var STORIES_AND_LESSON_DESC = "قصص مصورة تأخذك لعالم مليء بالمغامرات و التجارب"

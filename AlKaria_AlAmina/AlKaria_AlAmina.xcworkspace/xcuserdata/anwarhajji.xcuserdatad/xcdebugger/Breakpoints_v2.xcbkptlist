@@ -20,5 +20,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2371DB25-6423-4770-91B6-98BAB25EEA92"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlKaria_AlAmina/Screens/Game/PuzzleGameList/PuzzleGameListVcData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getScore(game_id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2371DB25-6423-4770-91B6-98BAB25EEA92 - 2d397fa7d60ff56a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (AlKaria_AlAmina.ServerResponseModel&lt;AlKaria_AlAmina.ScoreModel&gt;) -&gt; () in AlKaria_AlAmina.PuzzleGameListVc.getScore(game_id: Swift.Int) -&gt; ()"
+                  moduleName = "AlKaria_AlAmina"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anwarhajji/Al9aria/AlKaria_AlAmina/AlKaria_AlAmina/Screens/Game/PuzzleGameList/PuzzleGameListVcData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "266">
+               </Location>
+               <Location
+                  uuid = "2371DB25-6423-4770-91B6-98BAB25EEA92 - 2d397fa7d60ff56a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (AlKaria_AlAmina.ServerResponseModel&lt;AlKaria_AlAmina.ScoreModel&gt;) -&gt; () in AlKaria_AlAmina.PuzzleGameListVc.getScore(game_id: Swift.Int) -&gt; ()"
+                  moduleName = "AlKaria_AlAmina"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anwarhajji/Al9aria/AlKaria_AlAmina/AlKaria_AlAmina/Screens/Game/PuzzleGameList/PuzzleGameListVcData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "300">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

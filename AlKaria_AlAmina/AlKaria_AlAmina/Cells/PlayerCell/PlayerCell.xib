@@ -65,6 +65,12 @@
                     <constraint firstItem="lyp-GJ-u6a" firstAttribute="centerY" secondItem="qMW-3b-lle" secondAttribute="centerY" id="zpe-iu-QRw"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarLbl" destination="tld-zA-FuW" id="JUe-gl-cHm"/>
+                <outlet property="playerNameLbl" destination="hYx-ps-mYy" id="UIB-gg-Ojz"/>
+                <outlet property="rankingLbl" destination="fbE-JT-WHh" id="tDQ-7u-VhP"/>
+                <outlet property="scoreLbl" destination="bnt-Qg-Yg5" id="lYc-jL-Sy5"/>
+            </connections>
             <point key="canvasLocation" x="110.68702290076335" y="-9.5070422535211279"/>
         </tableViewCell>
     </objects>
