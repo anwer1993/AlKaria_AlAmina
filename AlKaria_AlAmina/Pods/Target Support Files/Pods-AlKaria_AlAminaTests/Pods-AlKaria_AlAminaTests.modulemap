@@ -1,0 +1,6 @@
+framework module Pods_AlKaria_AlAminaTests {
+  umbrella header "Pods-AlKaria_AlAminaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

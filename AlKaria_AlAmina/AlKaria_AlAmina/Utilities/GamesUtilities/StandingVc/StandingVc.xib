@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StandingVc" customModule="AlKaria_AlAmina" customModuleProvider="target">
+            <connections>
+                <outlet property="closeBtn" destination="Pj0-b0-Cux" id="Iy8-mm-Rah"/>
+                <outlet property="containerView" destination="WdT-j0-Vxn" id="Hwl-gh-JWa"/>
+                <outlet property="controlView" destination="U8b-GJ-CUP" id="7pL-Z1-tDS"/>
+                <outlet property="headerView" destination="XcI-aC-fqB" id="0iU-g4-4hg"/>
+                <outlet property="screenTitle" destination="Xis-yf-XWN" id="B4z-dd-FJd"/>
+                <outlet property="subviewContainer" destination="prR-2s-ydH" id="1ox-m4-guU"/>
+                <outlet property="tableView" destination="XU8-OE-mSe" id="5TK-Mo-NdM"/>
+                <outlet property="view" destination="WdT-j0-Vxn" id="hUy-Ju-gjc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="WdT-j0-Vxn">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8b-GJ-CUP" customClass="UIControl">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prR-2s-ydH">
+                    <rect key="frame" x="20" y="86" width="353" height="705"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcI-aC-fqB">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="80"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قائمة أفضل 10 لاعبين" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xis-yf-XWN">
+                                    <rect key="frame" x="10" y="10" width="333" height="60"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pj0-b0-Cux">
+                                    <rect key="frame" x="10" y="10" width="25" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="25" id="CWS-Ku-lpO"/>
+                                        <constraint firstAttribute="height" constant="25" id="PjO-hi-oyO"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal">
+                                        <imageReference key="image" image="xmark.app" catalog="system" symbolScale="large"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="closeBtnDidTapped:" destination="-1" eventType="touchUpInside" id="b4x-U8-UVD"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Xis-yf-XWN" secondAttribute="trailing" constant="10" id="1oQ-au-hLm"/>
+                                <constraint firstAttribute="height" constant="80" id="UOd-oT-svP"/>
+                                <constraint firstAttribute="bottom" secondItem="Xis-yf-XWN" secondAttribute="bottom" constant="10" id="fDG-sV-Z3G"/>
+                                <constraint firstItem="Pj0-b0-Cux" firstAttribute="top" secondItem="XcI-aC-fqB" secondAttribute="top" constant="10" id="joh-KJ-sdX"/>
+                                <constraint firstItem="Xis-yf-XWN" firstAttribute="centerY" secondItem="XcI-aC-fqB" secondAttribute="centerY" id="lLz-VQ-UkF"/>
+                                <constraint firstItem="Xis-yf-XWN" firstAttribute="leading" secondItem="XcI-aC-fqB" secondAttribute="leading" constant="10" id="pxM-3O-uVV"/>
+                                <constraint firstItem="Pj0-b0-Cux" firstAttribute="leading" secondItem="XcI-aC-fqB" secondAttribute="leading" constant="10" id="tNJ-Rl-GzM"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XU8-OE-mSe">
+                            <rect key="frame" x="2" y="82" width="349" height="621"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="XcI-aC-fqB" secondAttribute="trailing" id="5vg-zq-tEu"/>
+                        <constraint firstItem="XU8-OE-mSe" firstAttribute="top" secondItem="XcI-aC-fqB" secondAttribute="bottom" constant="2" id="9WS-j9-hG7"/>
+                        <constraint firstItem="XcI-aC-fqB" firstAttribute="leading" secondItem="prR-2s-ydH" secondAttribute="leading" id="F2p-Ra-ldE"/>
+                        <constraint firstItem="XcI-aC-fqB" firstAttribute="top" secondItem="prR-2s-ydH" secondAttribute="top" id="KcI-bg-f05"/>
+                        <constraint firstAttribute="trailing" secondItem="XU8-OE-mSe" secondAttribute="trailing" constant="2" id="WlN-jp-kx3"/>
+                        <constraint firstAttribute="bottom" secondItem="XU8-OE-mSe" secondAttribute="bottom" constant="2" id="bmt-Wh-mTY"/>
+                        <constraint firstItem="XU8-OE-mSe" firstAttribute="leading" secondItem="prR-2s-ydH" secondAttribute="leading" constant="2" id="dLa-sx-Ukr"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="C9E-66-gGg"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="U8b-GJ-CUP" firstAttribute="top" secondItem="C9E-66-gGg" secondAttribute="top" id="39Q-RO-vfR"/>
+                <constraint firstItem="U8b-GJ-CUP" firstAttribute="leading" secondItem="C9E-66-gGg" secondAttribute="leading" id="GpE-4T-RFF"/>
+                <constraint firstItem="C9E-66-gGg" firstAttribute="bottom" secondItem="U8b-GJ-CUP" secondAttribute="bottom" id="Hwz-Ll-ny6"/>
+                <constraint firstItem="C9E-66-gGg" firstAttribute="trailing" secondItem="U8b-GJ-CUP" secondAttribute="trailing" id="Qvp-ua-Ulc"/>
+                <constraint firstItem="prR-2s-ydH" firstAttribute="top" secondItem="C9E-66-gGg" secondAttribute="top" constant="27" id="W4t-8X-E8N"/>
+                <constraint firstItem="C9E-66-gGg" firstAttribute="bottom" secondItem="prR-2s-ydH" secondAttribute="bottom" constant="27" id="XFn-Zb-YDJ"/>
+                <constraint firstItem="prR-2s-ydH" firstAttribute="leading" secondItem="C9E-66-gGg" secondAttribute="leading" constant="20" id="brw-6G-6pp"/>
+                <constraint firstItem="prR-2s-ydH" firstAttribute="trailing" secondItem="C9E-66-gGg" secondAttribute="trailing" constant="-20" id="e2b-Bj-zed"/>
+            </constraints>
+            <point key="canvasLocation" x="-152" y="94"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark.app" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

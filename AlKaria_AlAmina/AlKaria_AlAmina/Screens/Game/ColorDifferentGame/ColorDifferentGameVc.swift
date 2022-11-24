@@ -127,6 +127,7 @@ class ColorDifferentGameVc: UIViewController, Storyboarded {
             Router.shared.present(screen: .ScoreScreen(score: score, bestScore: bestScore), modalePresentatioinStyle: .fullScreen, completion: nil)
             return false
         }
+        print("t")
     }
     
     
