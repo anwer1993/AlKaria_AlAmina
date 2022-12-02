@@ -27,6 +27,7 @@ class StoriesTableViewCell: UITableViewCell {
         openBtn.layer.backgroundColor = UIColor.warmPink.cgColor
         openBtn.applySketchShadow(color: .red20, alpha: 1, x: 0, y: 10, blur: 30, spread: 0)
         storiesTitle.textColor = .pumpkin
+        setupLabelFont()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -43,6 +44,10 @@ class StoriesTableViewCell: UITableViewCell {
         storiesTitle.text = model.name ?? ""
     }
     
+    func setupLabelFont() {
+        storiesTitle.font = UIFont(name: "NotoSansArabic-Bold", size: 20)
+        openBtn.titleLabel?.font = UIFont(name: "NotoSansArabic-Bold", size: 16)
+    }
     
     @IBAction func lireBtnDidTapped(_ sender: UIButton) {
         if let storieModel = storieModel {

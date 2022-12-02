@@ -18,6 +18,38 @@
             endingLineNumber = "30"
             landmarkName = "sendMessage(api_token:user_id:message:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F7C925D1-EA53-41AC-84CE-94A9E2347E24 - 2dd1741e775c3850"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;AlKaria_AlAmina.ServerResponseModel&lt;Swift.String&gt;, Alamofire.AFError&gt;) -&gt; () in AlKaria_AlAmina.ContactService.sendMessage(api_token: Swift.String, user_id: Swift.Int, message: Swift.String, completion: (AlKaria_AlAmina.ServerResponseModel&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "AlKaria_AlAmina"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anwarhajji/freelanceProjects/AlKaria_AlAmina/AlKaria_AlAmina/AlKaria_AlAmina/Services/ContactService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "F7C925D1-EA53-41AC-84CE-94A9E2347E24 - 2dd1741e775c3850"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;AlKaria_AlAmina.ServerResponseModel&lt;Swift.String&gt;, Alamofire.AFError&gt;) -&gt; () in AlKaria_AlAmina.ContactService.sendMessage(api_token: Swift.String, user_id: Swift.Int, message: Swift.String, completion: (AlKaria_AlAmina.ServerResponseModel&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "AlKaria_AlAmina"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anwarhajji/freelanceProjects/AlKaria_AlAmina/AlKaria_AlAmina/AlKaria_AlAmina/Services/ContactService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "260">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -27,6 +27,7 @@ class ColoringGameListVc: UIViewController, Storyboarded {
         containerView.gradientColor(startColor: .offWhite, endColor: .paleSkyBlue)
         gamesCollectionView.delegate = self
         gamesCollectionView.dataSource = self
+        screenTitleLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 25)
     }
 
     

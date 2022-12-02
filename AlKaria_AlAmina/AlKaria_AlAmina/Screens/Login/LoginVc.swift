@@ -78,6 +78,27 @@ class LoginVc: UIViewController, Storyboarded{
         usernameTxtField.delegate = self
         showPasswordImage.addTapGesture(UITapGestureRecognizer(target: self, action: #selector(handleShowPassword)))
         dontHaveAccountLbl.addTapGesture(UITapGestureRecognizer(target: self, action: #selector(showRegister)))
+        setupLabelFont()
+    }
+    
+    func setupLabelFont() {
+        screenTitleLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 30)
+        usernameLbl.font = UIFont(name: "NotoSansArabic-Medium", size: 13)
+        passwordLbl.font = UIFont(name: "NotoSansArabic-Medium", size: 13)
+        loginBtn.titleLabel?.font = UIFont(name: "NotoSansArabic-Medium", size: 16)
+        dontHaveAccountLbl.font = UIFont(name: "NotoSansArabic-Medium", size: 16)
+        usernameErrorLbl.font = UIFont(name: "NotoSansArabic-Regular", size: 9)
+        passwordErrorLbl.font = UIFont(name: "NotoSansArabic-Regular", size: 9)
+        usernameTxtField.font = UIFont(name: "NotoSansArabic-Medium", size: 16)
+        passwordTxtField.font = UIFont(name: "NotoSansArabic-Medium", size: 16)
+        usernameTxtField.attributedPlaceholder = NSAttributedString(
+            string: "إسم المستخدم او رقم الهاتف",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.warmGrey]
+        )
+        passwordTxtField.attributedPlaceholder = NSAttributedString(
+            string: "كلمة المرور",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.warmGrey]
+        )
     }
     
     func validateUsername() {

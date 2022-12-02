@@ -63,6 +63,11 @@ class ColorDifferentGameVc: UIViewController, Storyboarded {
         bestScoreLbl.text = "\(bestScore)"
         progressTimeView.progress = 0
         generateRandomColor()
+        screenTitle.font = UIFont(name: "NotoSansArabic-Bold", size: 25)
+        myScoreStaticLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 16)
+        bestScoreStaticLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 16)
+        myscoreLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 26)
+        bestScoreLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 26)
     }
     
     func setupScroeView(view: UIView) {

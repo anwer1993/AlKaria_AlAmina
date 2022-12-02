@@ -33,6 +33,7 @@ class PuzzleGameListVc: UIViewController, Storyboarded {
         standingView.layer.backgroundColor = UIColor.azure.cgColor
         standingView.addTapGesture(UITapGestureRecognizer(target: self, action: #selector(showStanding)))
         standingImage.imageTintColor(image: "icon_awesome_history", color: .white)
+        screenTitleLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 25)
     }
 
     

@@ -108,6 +108,15 @@
 		A6D4F203291B17650021A055 /* UrlRequestEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F202291B17650021A055 /* UrlRequestEnum.swift */; };
 		A6D4F205291B17EE0021A055 /* StoriesVcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F204291B17EE0021A055 /* StoriesVcData.swift */; };
 		A6DEB31D2925097300AF9C72 /* GameEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DEB31C2925097300AF9C72 /* GameEnum.swift */; };
+		A6DFC58E293AA1DF007BF2A5 /* NotoSansArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6DFC585293AA1DF007BF2A5 /* NotoSansArabic-Light.ttf */; };
+		A6DFC58F293AA1DF007BF2A5 /* NotoSansArabic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6DFC586293AA1DF007BF2A5 /* NotoSansArabic-Medium.ttf */; };
+		A6DFC590293AA1DF007BF2A5 /* NotoSansArabic-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6DFC587293AA1DF007BF2A5 /* NotoSansArabic-SemiBold.ttf */; };
+		A6DFC591293AA1DF007BF2A5 /* NotoSansArabic-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6DFC588293AA1DF007BF2A5 /* NotoSansArabic-ExtraLight.ttf */; };
+		A6DFC592293AA1DF007BF2A5 /* NotoSansArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6DFC589293AA1DF007BF2A5 /* NotoSansArabic-Bold.ttf */; };
+		A6DFC593293AA1DF007BF2A5 /* NotoSansArabic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6DFC58A293AA1DF007BF2A5 /* NotoSansArabic-Regular.ttf */; };
+		A6DFC594293AA1DF007BF2A5 /* NotoSansArabic-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6DFC58B293AA1DF007BF2A5 /* NotoSansArabic-ExtraBold.ttf */; };
+		A6DFC595293AA1DF007BF2A5 /* NotoSansArabic-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6DFC58C293AA1DF007BF2A5 /* NotoSansArabic-Black.ttf */; };
+		A6DFC596293AA1DF007BF2A5 /* NotoSansArabic-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6DFC58D293AA1DF007BF2A5 /* NotoSansArabic-Thin.ttf */; };
 		A6E231E1293398E500C60D2E /* ImageHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E231E0293398E500C60D2E /* ImageHistoryModel.swift */; };
 		A6E231E429339A4400C60D2E /* ColoringGameHistoryVcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E231E329339A4400C60D2E /* ColoringGameHistoryVcData.swift */; };
 		A6E231E82933B83000C60D2E /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E231E72933B83000C60D2E /* ChatVC.swift */; };
@@ -255,6 +264,15 @@
 		A6D4F202291B17650021A055 /* UrlRequestEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequestEnum.swift; sourceTree = "<group>"; };
 		A6D4F204291B17EE0021A055 /* StoriesVcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesVcData.swift; sourceTree = "<group>"; };
 		A6DEB31C2925097300AF9C72 /* GameEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEnum.swift; sourceTree = "<group>"; };
+		A6DFC585293AA1DF007BF2A5 /* NotoSansArabic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArabic-Light.ttf"; sourceTree = "<group>"; };
+		A6DFC586293AA1DF007BF2A5 /* NotoSansArabic-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArabic-Medium.ttf"; sourceTree = "<group>"; };
+		A6DFC587293AA1DF007BF2A5 /* NotoSansArabic-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArabic-SemiBold.ttf"; sourceTree = "<group>"; };
+		A6DFC588293AA1DF007BF2A5 /* NotoSansArabic-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArabic-ExtraLight.ttf"; sourceTree = "<group>"; };
+		A6DFC589293AA1DF007BF2A5 /* NotoSansArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArabic-Bold.ttf"; sourceTree = "<group>"; };
+		A6DFC58A293AA1DF007BF2A5 /* NotoSansArabic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArabic-Regular.ttf"; sourceTree = "<group>"; };
+		A6DFC58B293AA1DF007BF2A5 /* NotoSansArabic-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArabic-ExtraBold.ttf"; sourceTree = "<group>"; };
+		A6DFC58C293AA1DF007BF2A5 /* NotoSansArabic-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArabic-Black.ttf"; sourceTree = "<group>"; };
+		A6DFC58D293AA1DF007BF2A5 /* NotoSansArabic-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansArabic-Thin.ttf"; sourceTree = "<group>"; };
 		A6E231E0293398E500C60D2E /* ImageHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHistoryModel.swift; sourceTree = "<group>"; };
 		A6E231E329339A4400C60D2E /* ColoringGameHistoryVcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringGameHistoryVcData.swift; sourceTree = "<group>"; };
 		A6E231E72933B83000C60D2E /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
@@ -412,6 +430,7 @@
 				A66C8D462912DD140090B100 /* Utilities */,
 				A66C8D412912DACD0090B100 /* Extension */,
 				A66C8D4F291309200090B100 /* Screens */,
+				A6DFC584293AA1DF007BF2A5 /* NotoSansArabic */,
 				A66C8D072911BFE60090B100 /* Main.storyboard */,
 				A66C8D312911C12D0090B100 /* Authentication.storyboard */,
 				A66C8D0A2911BFE80090B100 /* Assets.xcassets */,
@@ -717,6 +736,22 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		A6DFC584293AA1DF007BF2A5 /* NotoSansArabic */ = {
+			isa = PBXGroup;
+			children = (
+				A6DFC585293AA1DF007BF2A5 /* NotoSansArabic-Light.ttf */,
+				A6DFC586293AA1DF007BF2A5 /* NotoSansArabic-Medium.ttf */,
+				A6DFC587293AA1DF007BF2A5 /* NotoSansArabic-SemiBold.ttf */,
+				A6DFC588293AA1DF007BF2A5 /* NotoSansArabic-ExtraLight.ttf */,
+				A6DFC589293AA1DF007BF2A5 /* NotoSansArabic-Bold.ttf */,
+				A6DFC58A293AA1DF007BF2A5 /* NotoSansArabic-Regular.ttf */,
+				A6DFC58B293AA1DF007BF2A5 /* NotoSansArabic-ExtraBold.ttf */,
+				A6DFC58C293AA1DF007BF2A5 /* NotoSansArabic-Black.ttf */,
+				A6DFC58D293AA1DF007BF2A5 /* NotoSansArabic-Thin.ttf */,
+			);
+			path = NotoSansArabic;
+			sourceTree = "<group>";
+		};
 		A6E231E229339A3000C60D2E /* Historique */ = {
 			isa = PBXGroup;
 			children = (
@@ -948,18 +983,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6DFC58E293AA1DF007BF2A5 /* NotoSansArabic-Light.ttf in Resources */,
 				A6FA621B2933C0F200B0BA2E /* ReceivedMessageCell.xib in Resources */,
+				A6DFC58F293AA1DF007BF2A5 /* NotoSansArabic-Medium.ttf in Resources */,
 				A62E60E82925AFBB000DF7BF /* PlayerCell.xib in Resources */,
+				A6DFC590293AA1DF007BF2A5 /* NotoSansArabic-SemiBold.ttf in Resources */,
 				A6A48A7229212DD10066B3AE /* PartenareDetailsVc.xib in Resources */,
 				A6241710291C5E60003D15A4 /* butterfly1.json in Resources */,
+				A6DFC593293AA1DF007BF2A5 /* NotoSansArabic-Regular.ttf in Resources */,
 				A66C8D322911C12D0090B100 /* Authentication.storyboard in Resources */,
 				A62E60DE292598B0000DF7BF /* congratulations.json in Resources */,
+				A6DFC596293AA1DF007BF2A5 /* NotoSansArabic-Thin.ttf in Resources */,
 				A6FA621D2933C10200B0BA2E /* SendedMessageCell.xib in Resources */,
 				A6A771C92919C378005BC400 /* CustomTabbar.xib in Resources */,
+				A6DFC591293AA1DF007BF2A5 /* NotoSansArabic-ExtraLight.ttf in Resources */,
 				A65C60432926E4390002261D /* LoaderView.xib in Resources */,
+				A6DFC595293AA1DF007BF2A5 /* NotoSansArabic-Black.ttf in Resources */,
 				A624170F291C5E60003D15A4 /* bird1.json in Resources */,
 				A62E60DA2925961B000DF7BF /* CustomPopup.xib in Resources */,
 				A66C8D0E2911BFE80090B100 /* LaunchScreen.storyboard in Resources */,
+				A6DFC594293AA1DF007BF2A5 /* NotoSansArabic-ExtraBold.ttf in Resources */,
+				A6DFC592293AA1DF007BF2A5 /* NotoSansArabic-Bold.ttf in Resources */,
 				A66C8D0B2911BFE80090B100 /* Assets.xcassets in Resources */,
 				A66C8D092911BFE60090B100 /* Main.storyboard in Resources */,
 				A62E60E32925AE71000DF7BF /* StandingVc.xib in Resources */,

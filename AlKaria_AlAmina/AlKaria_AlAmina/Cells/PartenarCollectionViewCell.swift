@@ -19,6 +19,7 @@ class PartenarCollectionViewCell: UICollectionViewCell {
         imageViewContainer.applySketchShadow(color: .black8, alpha: 1, x: 0, y: 3, blur: 6, spread: 0)
         partenarImage.image = UIImage(named: model.image ?? "")
         partenarName.text = model.name ?? ""
+        partenarName.font = UIFont(name: "NotoSansArabic-Regular", size: 13)
     }
     
 }

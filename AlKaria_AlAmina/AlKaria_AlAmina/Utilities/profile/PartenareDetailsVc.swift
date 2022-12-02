@@ -38,6 +38,7 @@ class  PartenareDetailsVc: UIViewController, SubViewConroller {
     }
     
     func initView() {
+        parntenarNameLbl.font = UIFont(name: "NotoSansArabic-Regular", size: 16)
         controlView.addTarget(self, action: #selector(removeView(_:)), for: .touchUpInside)
         controlView.alpha = 0.5
         controlView.layer.backgroundColor = UIColor.gray.cgColor

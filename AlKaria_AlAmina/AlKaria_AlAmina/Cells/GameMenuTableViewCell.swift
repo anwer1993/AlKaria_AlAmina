@@ -30,6 +30,7 @@ class GameMenuTableViewCell: UITableViewCell {
         containerView.layer.backgroundColor = UIColor.white.withAlphaComponent(0.44).cgColor
         containerView.layer.cornerRadius  = 20.0
         containerView.applySketchShadow(color: .black8, alpha: 1, x: 0, y: 3, blur: 30, spread: 0)
+        setupLabelFont()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,6 +42,10 @@ class GameMenuTableViewCell: UITableViewCell {
         titleLbl.text = model.title
     }
     
+    func setupLabelFont() {
+        titleLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 20)
+        playBtn.titleLabel?.font = UIFont(name: "NotoSansArabic-Bold", size: 16)
+    }
     
     @IBAction func playBtnDidTapped(_ sender: Any) {
         delegate?.play(index: self.index)

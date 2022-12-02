@@ -135,8 +135,19 @@ class ProfileVC: UIViewController, Storyboarded {
         profileAvatar.addTapGesture(tapGesture)
         takePicView.addTapGesture(tapGesture)
         takePicImage.addTapGesture(tapGesture)
+        setupLabelFont()
     }
     
+    func setupLabelFont() {
+        fullNameLbl.font = UIFont(name: "NotoSansArabic-Medium", size: 13)
+        dobLbl.font = UIFont(name: "NotoSansArabic-Medium", size: 13)
+        confirmBtn.titleLabel?.font = UIFont(name: "NotoSansArabic-Medium", size: 16)
+        acceptTermsLbl.font = UIFont(name: "NotoSansArabic-Medium", size: 16)
+        maleLbl.font = UIFont(name: "NotoSansArabic-Medium", size: 16)
+        femaleLbl.font = UIFont(name: "NotoSansArabic-Medium", size: 16)
+        fullNameTxtField.font = UIFont(name: "NotoSansArabic-Medium", size: 16)
+        dobTxtField.font = UIFont(name: "NotoSansArabic-Medium", size: 16)
+    }
     
     func initProfile(profile: ProfileModel?) {
         if let profile = profile {

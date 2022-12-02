@@ -28,6 +28,7 @@ class FriendTableViewCell: UITableViewCell {
         viewFriendImage.layer.borderColor = UIColor.lightGold.cgColor
         viewFriendImage.layer.borderWidth = 2
         friendImage.layer.cornerRadius = friendImage.frame.width * 0.5
+        friendName.font = UIFont(name: "NotoSansArabic-Bold", size: 18)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

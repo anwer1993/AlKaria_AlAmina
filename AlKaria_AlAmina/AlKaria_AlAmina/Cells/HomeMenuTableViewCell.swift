@@ -20,6 +20,7 @@ class HomeMenuTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.layer.cornerRadius = 20.0
+        setupLabelFont()
     }
     
     func gradientColor(startColor: UIColor, endColor: UIColor)  {
@@ -32,6 +33,11 @@ class HomeMenuTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func setupLabelFont() {
+        menuTitleLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 20)
+        menuDescLbl.font = UIFont(name: "NotoSansArabic-Medium", size: 16)
     }
     
     func setCell(model: MenuModel) {

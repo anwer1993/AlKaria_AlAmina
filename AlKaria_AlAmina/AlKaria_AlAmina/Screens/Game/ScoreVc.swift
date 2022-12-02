@@ -16,7 +16,6 @@ class ScoreVc: UIViewController, Storyboarded {
     
     @IBOutlet weak var gameFinishedLbl: UILabel!
     @IBOutlet weak var myScoreStaticLabel: UILabel!
-    @IBOutlet weak var bestScoreStaticLbl: UILabel!
     @IBOutlet weak var bestScoreStaticLabel: UILabel!
     @IBOutlet weak var myScoreLbl: UILabel!
     @IBOutlet weak var myScoreView: UIView!
@@ -43,7 +42,15 @@ class ScoreVc: UIViewController, Storyboarded {
         gameFinishedLbl.textColor = .pinkRed
         myScoreLbl.text = "\(myScore)"
         bestScoreLbl.text = "\(bestScore)"
+        screenTitle.font = UIFont(name: "NotoSansArabic-Bold", size: 25)
+        gameFinishedLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 45)
+        bestScoreStaticLabel.font = UIFont(name: "NotoSansArabic-Bold", size: 16)
+        myScoreStaticLabel.font = UIFont(name: "NotoSansArabic-Bold", size: 16)
+        myScoreLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 26)
+        bestScoreLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 26)
     }
+    
+    
     
     func setupScoreView(view: UIView) {
         view.layer.borderWidth = 2

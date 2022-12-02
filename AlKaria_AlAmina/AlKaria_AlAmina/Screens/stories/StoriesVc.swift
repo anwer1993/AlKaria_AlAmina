@@ -48,6 +48,11 @@ class StoriesVc: UIViewController, Storyboarded {
         profileImage.isHidden = true
         viewprofileImage.applySketchShadow(color: .black810, alpha: 1, x: 0, y: 6, blur: 30, spread: 0)
         viewprofileImage.addTapGesture(UITapGestureRecognizer(target: self, action: #selector(showProfileDetails)))
+        setupLabelFont()
+    }
+    
+    func setupLabelFont() {
+        screenTitle.font = UIFont(name: "NotoSansArabic-Bold", size: 24)
     }
     
     @objc func showProfileDetails() {

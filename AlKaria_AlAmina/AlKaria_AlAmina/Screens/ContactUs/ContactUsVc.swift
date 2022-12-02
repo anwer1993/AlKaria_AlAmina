@@ -59,6 +59,14 @@ class ContactUsVc: UIViewController, Storyboarded{
         suggestionsTxtView.delegate = self
         tripDescTxtView.delegate = self
         contentDescTxtView.delegate = self
+        screenTitle.font = UIFont(name: "NotoSansArabic-Bold", size: 24)
+        suggestionsLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 14)
+        contentsDescLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 14)
+        tripDescLbl.font = UIFont(name: "NotoSansArabic-Bold", size: 14)
+        suggestionsTxtView.font = UIFont(name: "NotoSansArabic-Medium", size: 14)
+        contentDescTxtView.font = UIFont(name: "NotoSansArabic-Medium", size: 14)
+        tripDescTxtView.font = UIFont(name: "NotoSansArabic-Medium", size: 14)
+        sendBtn.titleLabel?.font = UIFont(name: "NotoSansArabic-Medium", size: 16)
     }
     
     func setupViewTxtView(view: UIView, txtView: UITextView, lbl: UILabel) {

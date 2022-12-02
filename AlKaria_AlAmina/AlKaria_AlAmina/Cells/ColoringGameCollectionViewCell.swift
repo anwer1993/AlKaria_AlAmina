@@ -28,6 +28,7 @@ class ColoringGameCollectionViewCell: UICollectionViewCell {
         gameName.text = model.title
         gameIcon.addTapGesture(UITapGestureRecognizer(target: self, action: #selector(goToPlay)))
         historiqueView.addTapGesture(UITapGestureRecognizer(target: self, action: #selector(seeHistorique)))
+        gameName.font = UIFont(name: "NotoSansArabic-Bold", size: 13)
     }
     
     @objc func goToPlay() {
