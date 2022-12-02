@@ -64,7 +64,7 @@ class Authentication {
         }
     }
     
-    func editProfile(newModel: EditProfileModel, api_token: String, completion: @escaping(ServerResponseModel<ProfileModel>) -> Void) {
+    func editProfile(newModel: EditProfileModel, api_token: String, completion: @escaping(ServerDataResponseModel<ProfileModel>) -> Void) {
         let parameters = ["api_token": api_token,
                           "gender": "\(newModel.gender)",
                           "birthday": newModel.birthday,
@@ -75,11 +75,11 @@ class Authentication {
             }
             if let picture = newModel.picture {
                 multipartFormData.append(picture, withName: "picture", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
-            }
+            } 
             
-        }, to: UrlRequestEnum.EditProfile.url, method: .post)
+        }, to: "https://safer-kids.net/public/api/v1/profil/edit/ar", method: .post)
         .validate()
-        .responseDecodable(of: ServerResponseModel<ProfileModel>.self.self) { data in
+        .responseDecodable(of: ServerDataResponseModel<ProfileModel>.self) { data in
             if let data = data.value {
                 completion(data)
             }

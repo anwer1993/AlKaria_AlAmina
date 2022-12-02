@@ -37,11 +37,7 @@ class StoryWebViewVc: UIViewController, Storyboarded, WKNavigationDelegate {
     }
     
     func initView() {
-//        backView.layer.cornerRadius = 15.0
-//        backView.horizontalGradeint(startColor: .warmPink, endColor: .pinkRed)
-//        backView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
-//        backView.addTapGesture(UITapGestureRecognizer(target: self, action: #selector(back)))
-//        backView.isHidden = true
+        containerView.backgroundColor  = .lightPink
     }
     
     @objc func back(){
@@ -53,4 +49,7 @@ class StoryWebViewVc: UIViewController, Storyboarded, WKNavigationDelegate {
         hideLoader()
     }
     
+    @IBAction func backBtnDidTapped(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
 }

@@ -42,7 +42,6 @@ class ColorDifferentGameVc: UIViewController, Storyboarded {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        initView()
         getBestScore()
     }
     
@@ -61,6 +60,7 @@ class ColorDifferentGameVc: UIViewController, Storyboarded {
         collectionViewLayout.minimumLineSpacing = 1
         collectionViewLayout.minimumInteritemSpacing = 1
         myscoreLbl.text = "\(score)"
+        bestScoreLbl.text = "\(bestScore)"
         progressTimeView.progress = 0
         generateRandomColor()
     }

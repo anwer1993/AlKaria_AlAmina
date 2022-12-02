@@ -99,28 +99,28 @@ class LoginVc: UIViewController, Storyboarded{
     }
     
     @IBAction func loginBtnDidTapped(_ sender: Any) {
-        login(username: "username", password: "password")
+//        login(username: "username", password: "password")
 
-//        do {
-//            let username = try usernameTxtField.validatedText(validationType: .username)
-//            let password = try passwordTxtField.validatedText(validationType: .emptyPassword)
-//            validatepPassword()
-//            validateUsername()
-//            login(username: username, password: password)
-//        } catch (let error) {
-//            if let error = error as? ValidationnError {
-//                switch error {
-//                case .usernameError:
-//                    invalidUsername()
-//                    break
-//                case .passwordError:
-//                    invalidPassword()
-//                    break
-//                default:
-//                    break
-//                }
-//            }
-//        }
+        do {
+            let username = try usernameTxtField.validatedText(validationType: .username)
+            let password = try passwordTxtField.validatedText(validationType: .emptyPassword)
+            validatepPassword()
+            validateUsername()
+            login(username: username, password: password)
+        } catch (let error) {
+            if let error = error as? ValidationnError {
+                switch error {
+                case .usernameError:
+                    invalidUsername()
+                    break
+                case .passwordError:
+                    invalidPassword()
+                    break
+                default:
+                    break
+                }
+            }
+        }
     }
     
     

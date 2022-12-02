@@ -17,8 +17,11 @@ class ColoringGameVc: UIViewController, Storyboarded, UIImagePickerControllerDel
     @IBOutlet var lineWidthSlider: UISlider!
     @IBOutlet var lastColor: UIButton!
     @IBOutlet var undoButton: UIButton!
-    @IBOutlet var redoButton: UIButton!
     @IBOutlet weak var tools: UIStackView!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var undoView: UIView!
+    @IBOutlet weak var saveImageView: UIView!
+    @IBOutlet weak var clearView: UIView!
     
     //Our current Coloring Book View
     var coloringBookView:ColoringBookView? = nil
@@ -26,11 +29,14 @@ class ColoringGameVc: UIViewController, Storyboarded, UIImagePickerControllerDel
     private var verticalConstrains:[NSLayoutConstraint]? = nil
     private var toolsHiddenState:Bool = false
     
-    var gameModel: GameMenuModel?  = GameMenuModel(image_name: "love_grand_mother", title: "كم أحبك يا جدتي")
+    var gameModel: ColoringGameMenuModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        containerView.gradientColor(startColor: .offWhite, endColor: .paleSkyBlue)
+        setupMEnuView(view: clearView)
+        setupMEnuView(view: undoView)
+        setupMEnuView(view: saveImageView)
         //Set the controller as ScrollView delegate and change the pan gesture to two fingers for easier drawing
         self.scrollView.delegate = self
         self.scrollView.panGestureRecognizer.minimumNumberOfTouches = 2
@@ -38,21 +44,21 @@ class ColoringGameVc: UIViewController, Storyboarded, UIImagePickerControllerDel
         scrollView.maximumZoomScale = 6
         scrollView.minimumZoomScale = 0.6
         
-        //In case we are running in iOS 14 the last color button will display the native color wheel
-        if #available(iOS 14.0, *){
-            //iOS 14 gets more functionality
-            self.lastColor.backgroundColor = .white
-            self.lastColor.setTitle("*", for: .normal)
-            self.lastColor.tag = 999
-        }
+        self.lastColor.backgroundColor = .white
+        self.lastColor.tag = 999
         
         //Recreate the last used image
         if let gameModel = gameModel {
-            if let image = UIImage(named: gameModel.image_name) ?? UIImage(named:"mandala1.png"){
+            if let image = UIImage(named: gameModel.image_name){
                 self.createColoringBookView(with: image, optimized: true)
             }
         }
         
+    }
+    
+    func setupMEnuView(view: UIView) {
+        view.layer.cornerRadius = 21
+        view.menuViewGradientColor(startColor: .warmPink, endColor: .amethyst, cornerRadius: 21)
     }
     
     func saveImage(image: UIImage) -> Bool {
@@ -71,106 +77,6 @@ class ColoringGameVc: UIViewController, Storyboarded, UIImagePickerControllerDel
         }
     }
     
-    @IBAction func createNewDrawing(_ sender: Any) {
-        let alert = UIAlertController()
-        alert.popoverPresentationController?.sourceView = sender as? UIView
-        
-        let action1 = UIAlertAction(title: "Test Image 1", style: .default) { (action) in
-            DispatchQueue.main.async {
-                if let testImage = UIImage(named: "mandala1.png"){
-                    self.askOptimizationFor(testImage)
-                }
-            }
-        }
-        
-        let action2 = UIAlertAction(title: "Test Image 2", style: .default) { (action) in
-            DispatchQueue.main.async {
-                if let testImage = UIImage(named: "mandala2.png"){
-                    self.askOptimizationFor(testImage)
-                }
-            }
-            
-        }
-        
-        let action3 = UIAlertAction(title: "Test Image 3", style: .default) { (action) in
-            DispatchQueue.main.async {
-                if let testImage = UIImage(named: "testImage3.jpg"){
-                    self.askOptimizationFor(testImage)
-                }
-            }
-        }
-        
-        let action4 = UIAlertAction(title: "Custom Image", style: .default) { (action) in
-            DispatchQueue.main.async {
-                self.openImagePicker()
-            }
-        }
-        
-        let action5 = UIAlertAction(title: "save Image", style: .default) { (action) in
-            DispatchQueue.main.async {
-                if let image1 = self.coloringBookView?.snapshot(of: self.coloringBookView?.bounds), let image = image1.imageByMakingWhiteBackgroundTransparent() {
-                    let success = self.saveImage(image: image)
-                    print(success)
-                }
-            }
-        }
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        alert.addAction(action1)
-        alert.addAction(action2)
-        alert.addAction(action3)
-        alert.addAction(action4)
-        alert.addAction(action5)
-        alert.addAction(cancel)
-        
-        self.present(alert, animated: true)
-        
-    }
-    
-    private func askOptimizationFor(_ image:UIImage){
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        
-        
-        let action1 = UIAlertAction(title: "Optimized (+ Creation Time, + Performance)", style: .default) { (action) in
-            DispatchQueue.main.async {
-                self.createColoringBookView(with: image, optimized: true)
-            }
-        }
-        
-        let action2 = UIAlertAction(title: "Not Optimized (- Creation Time, - Performance)", style: .default) { (action) in
-            DispatchQueue.main.async {
-                self.createColoringBookView(with: image, optimized: false)
-            }
-        }
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        alert.addAction(action1)
-        alert.addAction(action2)
-        alert.addAction(cancel)
-        
-        self.present(alert, animated: true)
-        
-    }
-    
-    private func openImagePicker(){
-//        if #available(iOS 14, *){
-//            var configuration = PHPickerConfiguration()
-//            configuration.selectionLimit = 1
-//            let picker = PHPickerViewController(configuration: configuration)
-//            picker.delegate = self
-//            self.present(picker, animated: true)
-//
-//        }
-//        else{
-//            let picker = UIImagePickerController()
-//            picker.delegate = self
-//            picker.sourceType = .photoLibrary
-//            self.present(picker, animated: true)
-//        }
-    }
-    
     private func createColoringBookView(with image:UIImage, optimized:Bool = true){
         //Save the last stroke color we used, if none is found choose red
         let lastColor:UIColor = self.coloringBookView?.currentColor ?? .red
@@ -180,20 +86,24 @@ class ColoringGameVc: UIViewController, Storyboarded, UIImagePickerControllerDel
         let messageView = UIView()
         messageView.translatesAutoresizingMaskIntoConstraints = false
         messageView.backgroundColor = .white
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.distribution = .fillEqually
         
         let label = UILabel()
-        label.text = "Currently proccesing your image, please wait"
+        let frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        let loader = LoaderView(frame: frame)
+        loader.tag = Utilities.loaderViewTag
+        loader.controlView.backgroundColor = .clear
+        messageView.insertSubview(loader, at: 0)
+        loader.backgroundColor = .clear
+        messageView.addSubview(label)
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        let topAnchor = label.topAnchor.constraint(equalTo: messageView.topAnchor, constant: 100)
+        let widthAnchor = label.widthAnchor.constraint(equalToConstant: 250)
+        let centerXAnchor = label.centerXAnchor.constraint(equalTo: messageView.centerXAnchor)
+        NSLayoutConstraint.activate([topAnchor, widthAnchor, centerXAnchor])
+        label.text = "جارٍ معالجة صورتك حاليًا ، يرجى الانتظار"
         label.textAlignment = .center
-        
-        let indicator = UIActivityIndicatorView()
-        indicator.startAnimating()
-        stack.addArrangedSubview(label)
-        stack.addArrangedSubview(indicator)
-        
-        stack.fixInView(messageView)
+        label.numberOfLines = 3
         
         UIView.transition(with: self.view,
                           duration: 0.3,
@@ -210,16 +120,10 @@ class ColoringGameVc: UIViewController, Storyboarded, UIImagePickerControllerDel
             DispatchQueue.main.async{
                 messageView.removeFromSuperview()
                 //Create the Coloring Book View
-//                self.coloringBookView?.frame = CGRect(x: 0.0, y: 0.0, width: 200, height: 200)
                 self.coloringBookView = ColoringBookView(coloringImage: coloringImage)
                 self.scrollView.addSubview(self.coloringBookView!)
                 //Add to scrollView settings constraints
                 self.coloringBookView?.translatesAutoresizingMaskIntoConstraints = false
-                
-//                let width = self.coloringBookView?.widthAnchor.constraint(equalToConstant: 300)
-//                let height = self.coloringBookView?.heightAnchor.constraint(equalToConstant: 300)
-//                let centerH =  self.coloringBookView?.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor)
-//                let centerY =  self.coloringBookView?.centerYAnchor.constraint(equalTo: self.scrollView.centerXAnchor)
                 
                 let topC = self.coloringBookView?.topAnchor.constraint(equalTo: self.scrollView.topAnchor)
                 let bottomC = self.coloringBookView?.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor)
@@ -263,9 +167,11 @@ class ColoringGameVc: UIViewController, Storyboarded, UIImagePickerControllerDel
         }
     }
     
+    @IBAction func backBtnDidTapped(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     
     @IBAction func sliderChanged(_ sender: Any) {
-        //Change line width from 1 to 40 using the slider value (0-1). Nothing fancy about using SIMD functions, I just don't want to write a CGFloat mix function
         coloringBookView?.currentWidth = CGFloat(simd_mix(1.0, 40.0, lineWidthSlider.value))
     }
     
@@ -276,28 +182,18 @@ class ColoringGameVc: UIViewController, Storyboarded, UIImagePickerControllerDel
     }
     
     @IBAction func undo(_ sender: Any) {
-        //Send undo action to Coloring Book
         self.coloringBookView?.undo()
         self.checkColoringBookState()
     }
     
-    @IBAction func redo(_ sender: Any) {
-        //Send redo action to Coloring Book
-        self.coloringBookView?.redo()
-        self.checkColoringBookState()
-    }
     
-    @IBAction func toggleImageLayer(_ sender: Any) {
-        self.coloringBookView?.hideColoringLayer()
-    }
-    
-    
-    
-    @IBAction func hideTools(_ sender: Any) {
-        //Toggle isHidden from tools
-//        for tool in tools{
-//            tool.isHidden = !tool.isHidden
-//        }
+    @IBAction func saveImage(_ sender: Any) {
+        if let coloringImage = self.coloringBookView?.snapshot(of: self.coloringBookView?.bounds), let image = coloringImage.imageByMakingWhiteBackgroundTransparent() {
+            guard let pngData = image.pngData() else {return}
+            showCustomAlert(title: "الرجاء التأكيد", message: "هل أنت موافق على حفظ الصورة ؟") {
+                self.saveImage(picture: pngData)
+            }
+        }
     }
     
     private func saveImage(_ image:UIImage, optimized:Bool){
@@ -336,7 +232,6 @@ class ColoringGameVc: UIViewController, Storyboarded, UIImagePickerControllerDel
     
     private func checkColoringBookState(){
         self.undoButton.isEnabled = coloringBookView?.canUndo ?? false
-        self.redoButton.isEnabled = coloringBookView?.canRedo ?? false
     }
 }
 
@@ -371,61 +266,14 @@ extension ColoringGameVc:UIColorPickerViewControllerDelegate{
     }
 }
 
-//extension ColoringGameVc:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-//
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        dismiss(animated: true)
-//
-//    }
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        if let image:UIImage = info[.originalImage] as? UIImage ??
-//                                info[.editedImage] as? UIImage{
-//            DispatchQueue.main.async {
-//                self.askOptimizationFor(image)
-//            }
-//        }
-//        dismiss(animated: true)
-//    }
-//}
-
-//extension ColoringGameVc:PHPickerViewControllerDelegate{
-//    @available(iOS 14, *)
-//    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-//        if let provider = results.first?.itemProvider{
-//            if provider.canLoadObject(ofClass: UIImage.self){
-//                provider.loadObject(ofClass: UIImage.self) { (image, error) in
-//                    if let image = image as? UIImage{
-//                        DispatchQueue.main.async {
-//                            self.askOptimizationFor(image)
-//                        }
-//                    }
-//                }
-//            }}
-//
-//        dismiss(animated: true)
-//    }
-//
-//
-//}
-
 extension ColoringGameVc:ColoringBookViewDelegate{
+    
     func viewWillStartDrawing() {
-//        if let firstTool = tools.first{
-//            self.toolsHiddenState = firstTool.isHidden
-//        }
-//
-//        for tool in tools{
-//            tool.isHidden = true
-//        }
     }
     
     func viewDidEndDrawing() {
-//        for tool in tools{
-//            tool.isHidden = self.toolsHiddenState
-//        }
-//        self.checkColoringBookState()
+        self.checkColoringBookState()
     }
-    
     
 }
 

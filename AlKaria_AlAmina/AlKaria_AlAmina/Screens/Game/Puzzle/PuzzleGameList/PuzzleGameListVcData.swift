@@ -20,6 +20,7 @@ extension PuzzleGameListVc {
                 if let data = res.data, res.result  == true{
                     strongSelf.addChildVc(strongSelf.standingVc) {
                     }
+                    strongSelf.standingVc.topScore = data
                 } else {
                     strongSelf.showAlert(for: "")
                 }

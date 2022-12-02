@@ -18,3 +18,9 @@ struct GameMenuModel: Codable {
     var title: String
 }
 
+struct ColoringGameMenuModel: Codable {
+    var image_name: String
+    var title: String
+    var id: Int
+}
+

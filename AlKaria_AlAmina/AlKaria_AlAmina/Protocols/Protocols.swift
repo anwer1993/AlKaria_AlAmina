@@ -58,3 +58,10 @@ protocol LireStoryDelegate {
 protocol PlayGameDelegate {
     func play(index: Int?)
 }
+
+
+protocol ColoringGameProtocol  {
+    
+    func goToPlay(index: Int)
+    func seeHistorique(index: Int)
+}

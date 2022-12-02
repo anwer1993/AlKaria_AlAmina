@@ -15,8 +15,11 @@ extension ContactUsVc {
             showLoader()
             Authentication.shared.sendFeedback(api_token: token, response_1: response_1, response_2: response_2, response_3: response_3) {[weak self] resp in
                 guard let strongSelf = self else {return}
+                strongSelf.hideLoader()
                 if resp.result == true{
-                    strongSelf.showSuccessAlert(for: "تم الإرسال بنجاح")
+                    strongSelf.showSuccessAlert(for: "تم الإرسال بنجاح") {
+                        strongSelf.back()
+                    }
                 } else {
                     strongSelf.showAlert(for: resp.message ?? "")
                 }

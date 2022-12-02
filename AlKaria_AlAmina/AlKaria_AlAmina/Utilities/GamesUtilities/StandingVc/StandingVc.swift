@@ -22,6 +22,7 @@ class StandingVc: UIViewController, SubViewConroller  {
     var handleTapWhenDismiss: () -> Void = {}
     var topScore: [ScoreModel] = []  {
         didSet  {
+            topScore = topScore.sorted(by: {Int($0.score ?? "") ?? 0 < Int($1.score ?? "") ?? 0})
             self.tableView.reloadData()
         }
     }
@@ -90,6 +91,7 @@ extension StandingVc: UITableViewDelegate, UITableViewDataSource {
         guard let cell  = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as? PlayerCell else {
             return UITableViewCell()
         }
+        cell.setupCell(index: indexPath.row + 1, score: topScore[indexPath.row])
         return cell
     }
     

@@ -46,13 +46,14 @@ extension ColoringGameListVc: UICollectionViewDelegate, UICollectionViewDataSour
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColoringGameCollectionViewCell", for: indexPath) as? ColoringGameCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setupCell(model: Utilities.coloringGameMenu[indexPath.row])
+        cell.delegate = self
+        cell.setupCell(model: Utilities.coloringGameMenu[indexPath.row], index: indexPath.row)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        Router.shared.present(screen: .ColoringGame, modalePresentatioinStyle: .fullScreen, completion: nil)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
@@ -60,6 +61,18 @@ extension ColoringGameListVc: UICollectionViewDelegate, UICollectionViewDataSour
         let padding: CGFloat = 10.0
         let collectionViewSize = collectionView.frame.size.width - padding
         return CGSize(width: collectionViewSize * 0.5, height: collectionViewSize * 0.5)
+    }
+    
+}
+
+
+extension ColoringGameListVc: ColoringGameProtocol {
+    func goToPlay(index: Int) {
+        Router.shared.present(screen: .ColoringGame(gameImageModel: Utilities.coloringGameMenu[index]), modalePresentatioinStyle: .fullScreen, completion: nil)
+    }
+    
+    func seeHistorique(index: Int) {
+        Router.shared.present(screen: .Historique(game_id: Utilities.coloringGameMenu[index].id), modalePresentatioinStyle: .fullScreen, completion: nil)
     }
     
     

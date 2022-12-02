@@ -27,7 +27,8 @@ class StoriesVc: UIViewController, Storyboarded {
         super.viewDidLoad()
         initView()
         getStories()
-        getProfile()
+        getProfile(completion: {_ in 
+        })
         // Do any additional setup after loading the view.
     }
     

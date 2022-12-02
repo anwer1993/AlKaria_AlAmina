@@ -11,7 +11,7 @@ class Utilities {
     
     static var loaderViewTag = 10000
     
-    static var baseUrl = "http://dev.safer-kids.net/"
+    static var baseUrl = "https://safer-kids.net/public/"
     
     static var STORIES_AND_LESSON = "قصص و عبر مفيدة"
     static var STORIES_AND_LESSON_DESC = "قصص مصورة تأخذك لعالم مليء بالمغامرات و التجارب"
@@ -35,15 +35,15 @@ class Utilities {
     ]
     
     static var coloringGameMenu = [
-        GameMenuModel(image_name: "love_grand_mother", title: "كم أحبك يا جدتي"),
-        GameMenuModel(image_name: "Kaaba_icon", title: "الكعبة"),
-        GameMenuModel(image_name: "Ismail_stone_icon", title: "حجر إسماعيل"),
-        GameMenuModel(image_name: "Let's_perform_ablution_icon", title: "هيا نتوضأ"),
-        GameMenuModel(image_name: "Makky_icon", title: "مكي"),
-        GameMenuModel(image_name: "makka_icon", title: "مكية"),
-        GameMenuModel(image_name: "fishs_icon", title: "السمكات"),
-        GameMenuModel(image_name: "my_cat_icon", title: "قطتي"),
-        GameMenuModel(image_name: "smiling_sun_icon", title: "الشمس المبتسمة")
+        ColoringGameMenuModel(image_name: "love_grand_mother", title: "كم أحبك يا جدتي", id: 1),
+        ColoringGameMenuModel(image_name: "Kaaba_icon", title: "الكعبة", id: 2),
+        ColoringGameMenuModel(image_name: "Ismail_stone_icon", title: "حجر إسماعيل", id: 3),
+        ColoringGameMenuModel(image_name: "Let's_perform_ablution_icon", title: "هيا نتوضأ", id: 4),
+        ColoringGameMenuModel(image_name: "Makky_icon", title: "مكي", id: 5),
+        ColoringGameMenuModel(image_name: "makka_icon", title: "مكية", id: 6),
+        ColoringGameMenuModel(image_name: "fishs_icon", title: "السمكات", id: 7),
+        ColoringGameMenuModel(image_name: "my_cat_icon", title: "قطتي", id: 8),
+        ColoringGameMenuModel(image_name: "smiling_sun_icon", title: "الشمس المبتسمة", id: 9)
     ]
     
     

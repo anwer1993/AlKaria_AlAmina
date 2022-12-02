@@ -10,6 +10,14 @@ import UIKit
 
 extension  UIView {
     
+    func menuViewGradientColor(startColor: UIColor, endColor: UIColor, cornerRadius: CGFloat = 0.0)  {
+        let gradient = CAGradientLayer()
+        gradient.frame = self.bounds
+        gradient.cornerRadius = cornerRadius
+        gradient.colors = [startColor.cgColor, endColor.cgColor]
+        self.layer.insertSublayer(gradient, at: 0)
+    }
+    
     func headerGradientColor(startColor: UIColor, endColor: UIColor, cornerRadius: CGFloat = 0.0)  {
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds

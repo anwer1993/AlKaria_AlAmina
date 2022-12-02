@@ -55,6 +55,10 @@ class ContactUsVc: UIViewController, Storyboarded{
         backView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
         backView.addTapGesture(UITapGestureRecognizer(target: self, action: #selector(back)))
         sendBtn.gradientbutton(shadowColor: .red20, startColor: .warmPink, endColor: .pinkRed)
+        scrollView.addTapGesture(UITapGestureRecognizer(target: self, action: #selector(endEditingText)))
+        suggestionsTxtView.delegate = self
+        tripDescTxtView.delegate = self
+        contentDescTxtView.delegate = self
     }
     
     func setupViewTxtView(view: UIView, txtView: UITextView, lbl: UILabel) {
@@ -66,8 +70,58 @@ class ContactUsVc: UIViewController, Storyboarded{
         lbl.textColor = .azure
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @objc func back(){
         self.dismiss(animated: true)
     }
+    
+    @objc func endEditingText(){
+        self.view.endEditing(true)
+    }
 
+    @IBAction func sendBtnDidTapped(_ sender: Any) {
+        if tripDescTxtView.text == "" || tripDescTxtView.text == " " || tripDescTxtView.text == "مكان مخصص للكتابة" {
+            invalidateTextView(view: tripDescView, label: tripDescLbl, textView: tripDescTxtView)
+        } else if contentDescTxtView.text == "" || contentDescTxtView.text == " " || contentDescTxtView.text == "مكان مخصص للكتابة" {
+            invalidateTextView(view: contentView, label: contentsDescLbl, textView: contentDescTxtView)
+        } else if suggestionsTxtView.text == "" || contentDescTxtView.text == " " || contentDescTxtView.text == "مكان مخصص للكتابة" {
+            invalidateTextView(view: suggestionsView, label: suggestionsLbl, textView: suggestionsTxtView)
+        } else {
+            sendFeedback(response_1: tripDescTxtView.text, response_2: contentDescTxtView.text, response_3: contentDescTxtView.text)
+        }
+    }
+}
+
+
+extension  ContactUsVc: UITextViewDelegate {
+    
+    func invalidateTextView(view: UIView, label: UILabel, textView: UITextView) {
+        view.layer.borderColor = UIColor.red.cgColor
+        view.layer.borderWidth = 1
+        label.textColor = .red
+        sendBtn.setTitle("خطأ", for: .normal)
+    }
+    
+    func validateTextView(view: UIView, label: UILabel, textView: UITextView) {
+        view.layer.borderWidth = 0
+        label.textColor = .azure
+        sendBtn.setTitle("تسجيل", for: .normal)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "مكان مخصص للكتابة" {
+            textView.text = ""
+        }
+        if  textView ==  tripDescTxtView {
+            validateTextView(view: tripDescView, label: tripDescLbl, textView: tripDescTxtView)
+        } else if textView == contentDescTxtView {
+            validateTextView(view: contentView, label: contentsDescLbl, textView: contentDescTxtView)
+        } else if textView == suggestionsTxtView {
+            validateTextView(view: suggestionsView, label: suggestionsLbl, textView: suggestionsTxtView)
+        }
+    }
+    
 }

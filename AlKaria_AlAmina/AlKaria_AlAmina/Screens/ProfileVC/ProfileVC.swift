@@ -41,6 +41,17 @@ class ProfileVC: UIViewController, Storyboarded {
     var gender: String = "0"
     var profilePic: Data? = nil
     
+    private lazy var datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker(frame: .zero)
+        datePicker.datePickerMode = .date
+        datePicker.timeZone = TimeZone.current
+        return datePicker
+    }()
+    
+    var tapGesture: UITapGestureRecognizer {
+        return UITapGestureRecognizer(target: self, action: #selector(showActionSheet(_:)))
+    }
+    
     var gesture: UITapGestureRecognizer {
         return UITapGestureRecognizer(target: self, action: #selector(didUpdateGender(_:)))
     }
@@ -48,12 +59,51 @@ class ProfileVC: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
-        // Do any additional setup after loading the view.
+        initProfile(profile: AccountManager.shared.profile)
+        setupDobPicker()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        initProfile()
+        getProfile(completion: { [weak self] model in
+            guard let StrongSelf = self else {return}
+            StrongSelf.initProfile(profile: model)
+        })
+    }
+    
+    func setupDobPicker() {
+        datePicker.locale = Locale(identifier: "ar_LY")
+        dobTxtField.inputView = datePicker
+        datePicker.preferredDatePickerStyle = .wheels
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "تأكيد", style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "إلغاء", style: .plain, target: self, action: #selector(cancelDatePicker));
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        dobTxtField.inputAccessoryView = toolbar
+        datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+    }
+    
+    @objc func donedatePicker(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.locale = Locale(identifier: "ar_LY")
+        dobTxtField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
+    
+    @objc func handleDatePicker(sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale(identifier: "ar_LY")
+        dobTxtField.text = dateFormatter.string(from: sender.date)
     }
     
     func initView() {
@@ -81,16 +131,20 @@ class ProfileVC: UIViewController, Storyboarded {
         femaleView.tag = 1
         maleView.addTapGesture(gesture)
         femaleView.addTapGesture(gesture)
+        profileImage.addTapGesture(tapGesture)
+        profileAvatar.addTapGesture(tapGesture)
+        takePicView.addTapGesture(tapGesture)
+        takePicImage.addTapGesture(tapGesture)
     }
     
     
-    func initProfile() {
-        if let profile = AccountManager.shared.profile {
+    func initProfile(profile: ProfileModel?) {
+        if let profile = profile {
             updateIcon(selectedItem: profile.gender  ?? "0")
             if let pic = profile.picture {
                 profileAvatar.isHidden = true
                 profileImage.isHidden = false
-                let url = URL(string: pic)
+                let url = URL(string: "\(Utilities.baseUrl)\(pic)")
                 profileImage.kf.setImage(with: url)
                 profileImage.contentMode = .scaleAspectFill
             } else {
@@ -106,7 +160,7 @@ class ProfileVC: UIViewController, Storyboarded {
     
     func updateIcon(selectedItem: String) {
         gender = selectedItem
-        if selectedItem == "0" {
+        if selectedItem == "1" {
             maleSelectedIcon.image = UIImage(named: "selected_icon")
             femaleSelectedIcon.image = UIImage(named: "unselected_icon")
         } else {
@@ -135,9 +189,126 @@ class ProfileVC: UIViewController, Storyboarded {
         
     }
     
+    @IBAction func confirmBtnDidTapped(_ sender: Any) {
+        if acceptTerms {
+            do {
+                let name = try fullNameTxtField.validatedText(validationType: .fullName)
+                let dob = try dobTxtField.validatedText(validationType: .Dob)
+                validateDobTxt()
+                validateFullname()
+                let newModel = EditProfileModel(gender: Int(gender) ?? 0, birthday: dob, name: name, picture: profilePic)
+                updateProfile(newModel: newModel)
+            } catch (let error) {
+                if let error = error as? ValidationnError {
+                    switch error {
+                    case .fullNameError:
+                        invalidFullname()
+                        break
+                    case .passwordError:
+                        invalidDob()
+                        break
+                    default:
+                        break
+                    }
+                }
+            }
+        } else {
+            showAlert(for: "الرجاء الموافقه على شروط الاستخدام")
+        }
+
+    }
 }
 
 
 extension ProfileVC: UITextFieldDelegate {
+    
+    func validateFullname() {
+        if fullNameTxtField.text?.isEmpty == false {
+            fullNameLbl.isHidden = false
+            fullNameLbl.textColor = .azure
+            viewFullName.customizeViewWhenValidField()
+        }
+    }
+    
+    func validateDobTxt() {
+        if dobTxtField.text?.isEmpty == false {
+            dobLbl.isHidden = false
+            dobLbl.textColor = .azure
+            dobView.customizeViewWhenValidField()
+        }
+    }
+    
+    func invalidFullname() {
+        validateDobTxt()
+        fullNameLbl.isHidden = false
+        fullNameLbl.customizeLabelWhenError()
+        viewFullName.customizeViewWhenInvalidField()
+    }
+    
+    func invalidDob() {
+        validateFullname()
+        dobLbl.customizeLabelWhenError()
+        dobView.customizeViewWhenInvalidField()
+    }
+    
+    func validateTextFieldWhenEndEditing(_ textField: UITextField) {
+        if textField == fullNameTxtField {
+            do {
+                _ = try fullNameTxtField.validatedText(validationType: .fullName)
+                validateFullname()
+            } catch (let error) {
+                if let error = error as? ValidationnError {
+                    switch error {
+                    case .fullNameError:
+                        invalidFullname()
+                        break
+                    default:
+                        break
+                    }
+                }
+            }
+        } else {
+            do {
+                _ = try dobTxtField.validatedText(validationType: .Dob)
+                validateDobTxt()
+            } catch (let error) {
+                if let error = error as? ValidationnError {
+                    switch error {
+                    case .dobError:
+                        invalidDob()
+                        break
+                    default:
+                        break
+                    }
+                }
+            }
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        validateTextFieldWhenEndEditing(textField)
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("TextField did begin editing method called")
+        if textField == fullNameTxtField {
+            fullNameLbl.isHidden = true
+            fullNameLbl.customizeLabelWhenValid()
+            viewFullName.customizeView()
+        } else {
+            dobLbl.customizeLabelWhenValid()
+            dobLbl.isHidden = true
+            dobView.customizeView()
+        }
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("TextField did end editing method called")
+        validateTextFieldWhenEndEditing(textField)
+    }
+    
     
 }

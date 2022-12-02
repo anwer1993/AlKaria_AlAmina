@@ -268,6 +268,8 @@ class RegisterVc: UIViewController, Storyboarded {
                         deactivateTextField(view: cityView, label: cityLbl)
                         showAlert(for: "الرجاء إدخال المدينة الخاص بيك")
                         break
+                    case .dobError:
+                        break
                     }
                 }
             }
@@ -276,16 +278,6 @@ class RegisterVc: UIViewController, Storyboarded {
             showAlert(for: "الرجاء الموافقه على شروط الاستخدام")
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

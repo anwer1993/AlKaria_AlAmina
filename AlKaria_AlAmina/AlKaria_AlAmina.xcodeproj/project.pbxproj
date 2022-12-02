@@ -10,6 +10,9 @@
 		0EDA9F3E9E72FC6BF9BD1DAF /* Pods_AlKaria_AlAminaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9893B9CA8E53580C428FDEC /* Pods_AlKaria_AlAminaTests.framework */; };
 		2C48B900B3190F1414497F83 /* Pods_AlKaria_AlAmina.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8F07EC789D43ED1434A5B9 /* Pods_AlKaria_AlAmina.framework */; };
 		A619FE9E291472E300664774 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619FE9D291472E300664774 /* UIViewControllerExtension.swift */; };
+		A61CFEDD29316A1E00B51C44 /* ProfileVcPickerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CFEDC29316A1E00B51C44 /* ProfileVcPickerImage.swift */; };
+		A61CFEDF2933923E00B51C44 /* ColoringGameVCData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CFEDE2933923E00B51C44 /* ColoringGameVCData.swift */; };
+		A61CFEE1293396BC00B51C44 /* ColoringGameHistoryVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CFEE0293396BC00B51C44 /* ColoringGameHistoryVc.swift */; };
 		A6241702291B1BE1003D15A4 /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6241701291B1BE1003D15A4 /* ContactService.swift */; };
 		A6241704291B1C96003D15A4 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6241703291B1C96003D15A4 /* FriendModel.swift */; };
 		A6241706291B1CDD003D15A4 /* FriendVcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6241705291B1CDD003D15A4 /* FriendVcData.swift */; };
@@ -70,6 +73,8 @@
 		A68F3DAF292E2BD100B9A86B /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F3DAE292E2BD100B9A86B /* CGFloatExtension.swift */; };
 		A68F3DB1292E2C9000B9A86B /* ColorDifferentVcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F3DB0292E2C9000B9A86B /* ColorDifferentVcData.swift */; };
 		A68F3DB7292E745E00B9A86B /* ScoreVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F3DB6292E745E00B9A86B /* ScoreVc.swift */; };
+		A68F3DB9292F73BC00B9A86B /* ProfileVcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F3DB8292F73BC00B9A86B /* ProfileVcData.swift */; };
+		A68F3DBD292FB3B500B9A86B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F3DBC292FB3B500B9A86B /* StringExtension.swift */; };
 		A692A040292C17E5007B674B /* ColoringGameListVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A692A03F292C17E5007B674B /* ColoringGameListVc.swift */; };
 		A692A042292C1D4B007B674B /* ColoringGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A692A041292C1D4B007B674B /* ColoringGameCollectionViewCell.swift */; };
 		A692A04D292C22AB007B674B /* Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A692A045292C22A9007B674B /* Mask.swift */; };
@@ -94,6 +99,8 @@
 		A6A771CF2919C7C5005BC400 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A771CE2919C7C5005BC400 /* UIDeviceExtension.swift */; };
 		A6A771D12919CF9C005BC400 /* UImageViewExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A771D02919CF9C005BC400 /* UImageViewExtesion.swift */; };
 		A6A771D42919D78F005BC400 /* GamesVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A771D32919D78F005BC400 /* GamesVc.swift */; };
+		A6C9EC9C2934D5420034740D /* ChatVcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9EC9B2934D5420034740D /* ChatVcData.swift */; };
+		A6C9EC9E2934EFAC0034740D /* MessageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9EC9D2934EFAC0034740D /* MessageResponseModel.swift */; };
 		A6D4F1FA291B14310021A055 /* StoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1F9291B14310021A055 /* StoriesTableViewCell.swift */; };
 		A6D4F1FC291B15AE0021A055 /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1FB291B15AE0021A055 /* StoryModel.swift */; };
 		A6D4F1FE291B15F60021A055 /* ServerResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1FD291B15F60021A055 /* ServerResponseModel.swift */; };
@@ -101,6 +108,9 @@
 		A6D4F203291B17650021A055 /* UrlRequestEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F202291B17650021A055 /* UrlRequestEnum.swift */; };
 		A6D4F205291B17EE0021A055 /* StoriesVcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F204291B17EE0021A055 /* StoriesVcData.swift */; };
 		A6DEB31D2925097300AF9C72 /* GameEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DEB31C2925097300AF9C72 /* GameEnum.swift */; };
+		A6E231E1293398E500C60D2E /* ImageHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E231E0293398E500C60D2E /* ImageHistoryModel.swift */; };
+		A6E231E429339A4400C60D2E /* ColoringGameHistoryVcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E231E329339A4400C60D2E /* ColoringGameHistoryVcData.swift */; };
+		A6E231E82933B83000C60D2E /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E231E72933B83000C60D2E /* ChatVC.swift */; };
 		A6E89B6A29217D8200AF3F44 /* StoryWebViewVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E89B6929217D8200AF3F44 /* StoryWebViewVc.swift */; };
 		A6F4D12B2919A81C0034173F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F4D12A2919A81C0034173F /* Utilities.swift */; };
 		A6F4D12E2919B3630034173F /* HomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F4D12D2919B3630034173F /* HomeVc.swift */; };
@@ -108,6 +118,12 @@
 		A6F62650291AFFA5000C895A /* FriendsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6264F291AFFA5000C895A /* FriendsVc.swift */; };
 		A6F62652291B00F5000C895A /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F62651291B00F5000C895A /* FriendTableViewCell.swift */; };
 		A6F62655291B126E000C895A /* StoriesVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F62654291B126E000C895A /* StoriesVc.swift */; };
+		A6FA621B2933C0F200B0BA2E /* ReceivedMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6FA621A2933C0F200B0BA2E /* ReceivedMessageCell.xib */; };
+		A6FA621D2933C10200B0BA2E /* SendedMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6FA621C2933C10200B0BA2E /* SendedMessageCell.xib */; };
+		A6FA621F2933C12A00B0BA2E /* ReceivedMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FA621E2933C12A00B0BA2E /* ReceivedMessageCell.swift */; };
+		A6FA62212933C13A00B0BA2E /* SendedMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FA62202933C13A00B0BA2E /* SendedMessageCell.swift */; };
+		A6FA62232933CA3F00B0BA2E /* UItableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FA62222933CA3F00B0BA2E /* UItableViewExtension.swift */; };
+		A6FA62252933CA5F00B0BA2E /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FA62242933CA5F00B0BA2E /* NSObjectExtension.swift */; };
 		A6FE52502921387300C7492A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FE524F2921387300C7492A /* ProfileVC.swift */; };
 		A6FE52522921400B00C7492A /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FE52512921400B00C7492A /* ProfileModel.swift */; };
 		A6FE525529216F9800C7492A /* ContactUsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FE525429216F9800C7492A /* ContactUsVc.swift */; };
@@ -137,6 +153,9 @@
 		296644E8A5D5C2C9C32E7C2A /* Pods-AlKaria_AlAminaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlKaria_AlAminaTests.debug.xcconfig"; path = "Target Support Files/Pods-AlKaria_AlAminaTests/Pods-AlKaria_AlAminaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A8F07EC789D43ED1434A5B9 /* Pods_AlKaria_AlAmina.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlKaria_AlAmina.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A619FE9D291472E300664774 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		A61CFEDC29316A1E00B51C44 /* ProfileVcPickerImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVcPickerImage.swift; sourceTree = "<group>"; };
+		A61CFEDE2933923E00B51C44 /* ColoringGameVCData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringGameVCData.swift; sourceTree = "<group>"; };
+		A61CFEE0293396BC00B51C44 /* ColoringGameHistoryVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringGameHistoryVc.swift; sourceTree = "<group>"; };
 		A6241701291B1BE1003D15A4 /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
 		A6241703291B1C96003D15A4 /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 		A6241705291B1CDD003D15A4 /* FriendVcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendVcData.swift; sourceTree = "<group>"; };
@@ -201,6 +220,8 @@
 		A68F3DAE292E2BD100B9A86B /* CGFloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
 		A68F3DB0292E2C9000B9A86B /* ColorDifferentVcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDifferentVcData.swift; sourceTree = "<group>"; };
 		A68F3DB6292E745E00B9A86B /* ScoreVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreVc.swift; sourceTree = "<group>"; };
+		A68F3DB8292F73BC00B9A86B /* ProfileVcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVcData.swift; sourceTree = "<group>"; };
+		A68F3DBC292FB3B500B9A86B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A692A03F292C17E5007B674B /* ColoringGameListVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringGameListVc.swift; sourceTree = "<group>"; };
 		A692A041292C1D4B007B674B /* ColoringGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringGameCollectionViewCell.swift; sourceTree = "<group>"; };
 		A692A045292C22A9007B674B /* Mask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mask.swift; sourceTree = "<group>"; };
@@ -225,6 +246,8 @@
 		A6A771CE2919C7C5005BC400 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		A6A771D02919CF9C005BC400 /* UImageViewExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UImageViewExtesion.swift; sourceTree = "<group>"; };
 		A6A771D32919D78F005BC400 /* GamesVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesVc.swift; sourceTree = "<group>"; };
+		A6C9EC9B2934D5420034740D /* ChatVcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVcData.swift; sourceTree = "<group>"; };
+		A6C9EC9D2934EFAC0034740D /* MessageResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponseModel.swift; sourceTree = "<group>"; };
 		A6D4F1F9291B14310021A055 /* StoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTableViewCell.swift; sourceTree = "<group>"; };
 		A6D4F1FB291B15AE0021A055 /* StoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
 		A6D4F1FD291B15F60021A055 /* ServerResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseModel.swift; sourceTree = "<group>"; };
@@ -232,6 +255,9 @@
 		A6D4F202291B17650021A055 /* UrlRequestEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequestEnum.swift; sourceTree = "<group>"; };
 		A6D4F204291B17EE0021A055 /* StoriesVcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesVcData.swift; sourceTree = "<group>"; };
 		A6DEB31C2925097300AF9C72 /* GameEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEnum.swift; sourceTree = "<group>"; };
+		A6E231E0293398E500C60D2E /* ImageHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHistoryModel.swift; sourceTree = "<group>"; };
+		A6E231E329339A4400C60D2E /* ColoringGameHistoryVcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringGameHistoryVcData.swift; sourceTree = "<group>"; };
+		A6E231E72933B83000C60D2E /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		A6E89B6929217D8200AF3F44 /* StoryWebViewVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryWebViewVc.swift; sourceTree = "<group>"; };
 		A6F4D12A2919A81C0034173F /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		A6F4D12D2919B3630034173F /* HomeVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVc.swift; sourceTree = "<group>"; };
@@ -239,6 +265,12 @@
 		A6F6264F291AFFA5000C895A /* FriendsVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsVc.swift; sourceTree = "<group>"; };
 		A6F62651291B00F5000C895A /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		A6F62654291B126E000C895A /* StoriesVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesVc.swift; sourceTree = "<group>"; };
+		A6FA621A2933C0F200B0BA2E /* ReceivedMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceivedMessageCell.xib; sourceTree = "<group>"; };
+		A6FA621C2933C10200B0BA2E /* SendedMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendedMessageCell.xib; sourceTree = "<group>"; };
+		A6FA621E2933C12A00B0BA2E /* ReceivedMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedMessageCell.swift; sourceTree = "<group>"; };
+		A6FA62202933C13A00B0BA2E /* SendedMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendedMessageCell.swift; sourceTree = "<group>"; };
+		A6FA62222933CA3F00B0BA2E /* UItableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UItableViewExtension.swift; sourceTree = "<group>"; };
+		A6FA62242933CA5F00B0BA2E /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		A6FE524F2921387300C7492A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		A6FE52512921400B00C7492A /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		A6FE525429216F9800C7492A /* ContactUsVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVc.swift; sourceTree = "<group>"; };
@@ -447,11 +479,14 @@
 			isa = PBXGroup;
 			children = (
 				A66C8D422912DADB0090B100 /* UIColorExtension.swift */,
+				A6FA62242933CA5F00B0BA2E /* NSObjectExtension.swift */,
+				A68F3DBC292FB3B500B9A86B /* StringExtension.swift */,
 				A6241711291C6287003D15A4 /* LottieAnimationViewExtension.swift */,
 				A6A771D02919CF9C005BC400 /* UImageViewExtesion.swift */,
 				A6A771CE2919C7C5005BC400 /* UIDeviceExtension.swift */,
 				A619FE9D291472E300664774 /* UIViewControllerExtension.swift */,
 				A66C8D492912F55F0090B100 /* UILabelExtension.swift */,
+				A6FA62222933CA3F00B0BA2E /* UItableViewExtension.swift */,
 				A66C8D442912DB190090B100 /* UIViewExtension.swift */,
 				A68F3DAE292E2BD100B9A86B /* CGFloatExtension.swift */,
 				A66C8D4D2912F79A0090B100 /* UITextFieldExtension.swift */,
@@ -551,6 +586,8 @@
 			isa = PBXGroup;
 			children = (
 				A6858D262915DCB500AF15CC /* menuModel.swift */,
+				A6C9EC9D2934EFAC0034740D /* MessageResponseModel.swift */,
+				A6E231E0293398E500C60D2E /* ImageHistoryModel.swift */,
 				A65C603B2926DAAB0002261D /* SettingsModel.swift */,
 				A65C60392926D81D0002261D /* TopScoreModel.swift */,
 				A6FE52512921400B00C7492A /* ProfileModel.swift */,
@@ -577,6 +614,7 @@
 			children = (
 				A692A043292C2205007B674B /* ColoringGameVc */,
 				A692A03E292C17C7007B674B /* ColoringGameList */,
+				A6E231E229339A3000C60D2E /* Historique */,
 			);
 			path = ColorigGame;
 			sourceTree = "<group>";
@@ -602,6 +640,7 @@
 			isa = PBXGroup;
 			children = (
 				A692A055292C2442007B674B /* ColoringGameVc.swift */,
+				A61CFEDE2933923E00B51C44 /* ColoringGameVCData.swift */,
 			);
 			path = ColoringGameVc;
 			sourceTree = "<group>";
@@ -633,6 +672,7 @@
 		A6A771C42919B4A6005BC400 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A6FA62172933C0AA00B0BA2E /* ChatCells */,
 				A62E60E62925AF9E000DF7BF /* PlayerCell */,
 				A6A771C52919B4C5005BC400 /* HomeMenuTableViewCell.swift */,
 				A692A041292C1D4B007B674B /* ColoringGameCollectionViewCell.swift */,
@@ -677,6 +717,33 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		A6E231E229339A3000C60D2E /* Historique */ = {
+			isa = PBXGroup;
+			children = (
+				A61CFEE0293396BC00B51C44 /* ColoringGameHistoryVc.swift */,
+				A6E231E329339A4400C60D2E /* ColoringGameHistoryVcData.swift */,
+			);
+			path = Historique;
+			sourceTree = "<group>";
+		};
+		A6E231E52933B81100C60D2E /* ListFriends */ = {
+			isa = PBXGroup;
+			children = (
+				A6F6264F291AFFA5000C895A /* FriendsVc.swift */,
+				A6241705291B1CDD003D15A4 /* FriendVcData.swift */,
+			);
+			path = ListFriends;
+			sourceTree = "<group>";
+		};
+		A6E231E62933B82200C60D2E /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A6E231E72933B83000C60D2E /* ChatVC.swift */,
+				A6C9EC9B2934D5420034740D /* ChatVcData.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		A6F4D12C2919AB570034173F /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -697,8 +764,8 @@
 		A6F6264E291AFF8F000C895A /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				A6F6264F291AFFA5000C895A /* FriendsVc.swift */,
-				A6241705291B1CDD003D15A4 /* FriendVcData.swift */,
+				A6E231E62933B82200C60D2E /* Chat */,
+				A6E231E52933B81100C60D2E /* ListFriends */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -713,10 +780,39 @@
 			path = stories;
 			sourceTree = "<group>";
 		};
+		A6FA62172933C0AA00B0BA2E /* ChatCells */ = {
+			isa = PBXGroup;
+			children = (
+				A6FA62192933C0D100B0BA2E /* ReceivedMessageCell */,
+				A6FA62182933C0BD00B0BA2E /* messageSentCell */,
+			);
+			path = ChatCells;
+			sourceTree = "<group>";
+		};
+		A6FA62182933C0BD00B0BA2E /* messageSentCell */ = {
+			isa = PBXGroup;
+			children = (
+				A6FA621C2933C10200B0BA2E /* SendedMessageCell.xib */,
+				A6FA62202933C13A00B0BA2E /* SendedMessageCell.swift */,
+			);
+			path = messageSentCell;
+			sourceTree = "<group>";
+		};
+		A6FA62192933C0D100B0BA2E /* ReceivedMessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				A6FA621A2933C0F200B0BA2E /* ReceivedMessageCell.xib */,
+				A6FA621E2933C12A00B0BA2E /* ReceivedMessageCell.swift */,
+			);
+			path = ReceivedMessageCell;
+			sourceTree = "<group>";
+		};
 		A6FE524E2921385E00C7492A /* ProfileVC */ = {
 			isa = PBXGroup;
 			children = (
 				A6FE524F2921387300C7492A /* ProfileVC.swift */,
+				A61CFEDC29316A1E00B51C44 /* ProfileVcPickerImage.swift */,
+				A68F3DB8292F73BC00B9A86B /* ProfileVcData.swift */,
 			);
 			path = ProfileVC;
 			sourceTree = "<group>";
@@ -852,11 +948,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6FA621B2933C0F200B0BA2E /* ReceivedMessageCell.xib in Resources */,
 				A62E60E82925AFBB000DF7BF /* PlayerCell.xib in Resources */,
 				A6A48A7229212DD10066B3AE /* PartenareDetailsVc.xib in Resources */,
 				A6241710291C5E60003D15A4 /* butterfly1.json in Resources */,
 				A66C8D322911C12D0090B100 /* Authentication.storyboard in Resources */,
 				A62E60DE292598B0000DF7BF /* congratulations.json in Resources */,
+				A6FA621D2933C10200B0BA2E /* SendedMessageCell.xib in Resources */,
 				A6A771C92919C378005BC400 /* CustomTabbar.xib in Resources */,
 				A65C60432926E4390002261D /* LoaderView.xib in Resources */,
 				A624170F291C5E60003D15A4 /* bird1.json in Resources */,
@@ -999,12 +1097,15 @@
 				A6814175292438AF007C2DF2 /* FifteenBoard.swift in Sources */,
 				A62E60E02925A505000DF7BF /* GameDescriptionModel.swift in Sources */,
 				A692A051292C22AB007B674B /* SpatialHashMasks.swift in Sources */,
+				A6FA62252933CA5F00B0BA2E /* NSObjectExtension.swift in Sources */,
 				A6A771CF2919C7C5005BC400 /* UIDeviceExtension.swift in Sources */,
 				A6F4D12E2919B3630034173F /* HomeVc.swift in Sources */,
 				A66C8D3B2911C5EB0090B100 /* RouterManager.swift in Sources */,
 				A68F3DAF292E2BD100B9A86B /* CGFloatExtension.swift in Sources */,
 				A66C8D062911BFE60090B100 /* SplachScreen.swift in Sources */,
+				A6E231E82933B83000C60D2E /* ChatVC.swift in Sources */,
 				A6A771C62919B4C5005BC400 /* HomeMenuTableViewCell.swift in Sources */,
+				A6E231E429339A4400C60D2E /* ColoringGameHistoryVcData.swift in Sources */,
 				A6988B092926F1A100DE2D5D /* HomeVcData.swift in Sources */,
 				A66C8D5829131F970090B100 /* OTPVc.swift in Sources */,
 				A6D4F1FE291B15F60021A055 /* ServerResponseModel.swift in Sources */,
@@ -1012,6 +1113,7 @@
 				A692A053292C22AB007B674B /* Stack.swift in Sources */,
 				A66C8D55291319110090B100 /* ResetForgotPasswordVc.swift in Sources */,
 				A68F3DB1292E2C9000B9A86B /* ColorDifferentVcData.swift in Sources */,
+				A68F3DBD292FB3B500B9A86B /* StringExtension.swift in Sources */,
 				A65C603A2926D81D0002261D /* TopScoreModel.swift in Sources */,
 				A619FE9E291472E300664774 /* UIViewControllerExtension.swift in Sources */,
 				A66C8D52291309530090B100 /* ForgotPasswordVc.swift in Sources */,
@@ -1019,16 +1121,19 @@
 				A6858D242915CA4700AF15CC /* RegisterVcImagePicker.swift in Sources */,
 				A6814178292440FB007C2DF2 /* PuzzleGameVc.swift in Sources */,
 				A6D4F1FA291B14310021A055 /* StoriesTableViewCell.swift in Sources */,
+				A68F3DB9292F73BC00B9A86B /* ProfileVcData.swift in Sources */,
 				A66C8D3E2911C62D0090B100 /* AppScreenEnum.swift in Sources */,
 				A6241704291B1C96003D15A4 /* FriendModel.swift in Sources */,
 				A62E60D52925826D000DF7BF /* PuzzleGameListVc.swift in Sources */,
 				A6F4D12B2919A81C0034173F /* Utilities.swift in Sources */,
+				A61CFEE1293396BC00B51C44 /* ColoringGameHistoryVc.swift in Sources */,
 				A6A771CB2919C537005BC400 /* CustomTabbar.swift in Sources */,
 				A6A48A7429212DE50066B3AE /* PartenareDetailsVc.swift in Sources */,
 				A6A771D42919D78F005BC400 /* GamesVc.swift in Sources */,
 				A692A056292C2442007B674B /* ColoringGameVc.swift in Sources */,
 				A692A042292C1D4B007B674B /* ColoringGameCollectionViewCell.swift in Sources */,
 				A6F62652291B00F5000C895A /* FriendTableViewCell.swift in Sources */,
+				A6E231E1293398E500C60D2E /* ImageHistoryModel.swift in Sources */,
 				A692A04E292C22AB007B674B /* Stroke.swift in Sources */,
 				A6F6264D291AFB5A000C895A /* PartenarsVc.swift in Sources */,
 				A6DEB31D2925097300AF9C72 /* GameEnum.swift in Sources */,
@@ -1040,11 +1145,13 @@
 				A6FE525529216F9800C7492A /* ContactUsVc.swift in Sources */,
 				A66C8D402911C94A0090B100 /* TabbarItemEnum.swift in Sources */,
 				A68F3DB7292E745E00B9A86B /* ScoreVc.swift in Sources */,
+				A61CFEDD29316A1E00B51C44 /* ProfileVcPickerImage.swift in Sources */,
 				A653CD9E2919D8E90066A1D4 /* GameMenuTableViewCell.swift in Sources */,
 				A6D4F201291B16B40021A055 /* AuthenticationService.swift in Sources */,
 				A692A054292C22AB007B674B /* UIView+fixInView.swift in Sources */,
 				A6F62655291B126E000C895A /* StoriesVc.swift in Sources */,
 				A68F3DAB292E2AE100B9A86B /* ColorDifferentGameVc.swift in Sources */,
+				A6FA621F2933C12A00B0BA2E /* ReceivedMessageCell.swift in Sources */,
 				A6241712291C6287003D15A4 /* LottieAnimationViewExtension.swift in Sources */,
 				A6F62650291AFFA5000C895A /* FriendsVc.swift in Sources */,
 				A66C8D482912DD220090B100 /* GradientButton.swift in Sources */,
@@ -1058,15 +1165,18 @@
 				A6988B0F2926F70400DE2D5D /* PuzzleGameVcData.swift in Sources */,
 				A6814174292438AF007C2DF2 /* BoardView.swift in Sources */,
 				A66C8D452912DB190090B100 /* UIViewExtension.swift in Sources */,
+				A6FA62212933C13A00B0BA2E /* SendedMessageCell.swift in Sources */,
 				A6FE52522921400B00C7492A /* ProfileModel.swift in Sources */,
 				A6FE52502921387300C7492A /* ProfileVC.swift in Sources */,
 				A681416E29242A85007C2DF2 /* LoginVcData.swift in Sources */,
+				A6C9EC9C2934D5420034740D /* ChatVcData.swift in Sources */,
 				A65C603C2926DAAB0002261D /* SettingsModel.swift in Sources */,
 				A6A771D12919CF9C005BC400 /* UImageViewExtesion.swift in Sources */,
 				A624170A291C4D9D003D15A4 /* PartenarCollectionViewCell.swift in Sources */,
 				A66C8D4C2912F6DF0090B100 /* Validators.swift in Sources */,
 				A66C8D342911C55C0090B100 /* LoginVc.swift in Sources */,
 				A66C8D4A2912F55F0090B100 /* UILabelExtension.swift in Sources */,
+				A6C9EC9E2934EFAC0034740D /* MessageResponseModel.swift in Sources */,
 				A6988B0B2926F2E700DE2D5D /* ContactUsVcData.swift in Sources */,
 				A68F3DAD292E2B5D00B9A86B /* ColorDifferentCollectionViewCell.swift in Sources */,
 				A66C8D392911C5B70090B100 /* Protocols.swift in Sources */,
@@ -1075,7 +1185,9 @@
 				A65C60382926D69E0002261D /* GameService.swift in Sources */,
 				A6241706291B1CDD003D15A4 /* FriendVcData.swift in Sources */,
 				A6A771CD2919C75B005BC400 /* MainTabbarVc.swift in Sources */,
+				A6FA62232933CA3F00B0BA2E /* UItableViewExtension.swift in Sources */,
 				A6858D222915A93900AF15CC /* RegisterVc.swift in Sources */,
+				A61CFEDF2933923E00B51C44 /* ColoringGameVCData.swift in Sources */,
 				A62E60EA2925AFC2000DF7BF /* PlayerCell.swift in Sources */,
 				A6D4F1FC291B15AE0021A055 /* StoryModel.swift in Sources */,
 			);

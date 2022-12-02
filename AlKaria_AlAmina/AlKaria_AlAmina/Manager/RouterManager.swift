@@ -133,8 +133,9 @@ struct Router: IRouter {
                 guard let vc = ColoringGameListVc.instantiate(storyboardName: "Main") else {return UIViewController()}
                 viewController = vc
                 break
-            case .ColoringGame:
+            case .ColoringGame(gameImageModel: let gameImageModel):
                 guard let vc = ColoringGameVc.instantiate(storyboardName: "Main") else {return UIViewController()}
+                vc.gameModel = gameImageModel
                 viewController = vc
                 break
             case .ColorDifferentGame:
@@ -145,6 +146,16 @@ struct Router: IRouter {
                 guard let vc = ScoreVc.instantiate(storyboardName: "Main") else {return UIViewController()}
                 vc.bestScore = bestScore
                 vc.myScore = score
+                viewController = vc
+                break
+            case .Historique(game_id: let game_id):
+                guard let vc = ColoringGameHistoryVc.instantiate(storyboardName: "Main") else {return UIViewController()}
+                vc.game_id = game_id
+                viewController = vc
+                break
+            case .Chat(friend: let friend):
+                guard let vc = ChatVc.instantiate(storyboardName: "Main") else {return UIViewController()}
+                vc.friend = friend
                 viewController = vc
                 break
             }

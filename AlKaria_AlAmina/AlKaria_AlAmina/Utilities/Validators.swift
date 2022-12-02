@@ -24,6 +24,7 @@ enum ValidationnError: Error {
     case phoneNumberError
     case countryError
     case cityError
+    case dobError
 }
 
 protocol ValidatorConvertible {
@@ -39,6 +40,7 @@ enum ValidatorType {
     case phoneNumber
     case country
     case city
+    case Dob
 }
 
 enum ValidatorFactory {
@@ -52,7 +54,17 @@ enum ValidatorFactory {
         case .phoneNumber: return PhoneNumberValidator()
         case .country: return CountryValidator()
         case .city: return CityValidator()
+        case .Dob: return DobValidator()
         }
+    }
+}
+
+struct DobValidator: ValidatorConvertible {
+    func validated(_ value: String, newValue: String? = nil) throws -> String {
+        guard value.dateFromString != nil else {
+            throw ValidationnError.dobError
+        }
+        return value
     }
 }
 

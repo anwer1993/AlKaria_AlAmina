@@ -33,4 +33,36 @@ class GameService {
             }
         }
     }
+    
+    func saveImage(api_token: String, picture: Data?, completion: @escaping(ServerResponseModel<String>) -> Void) {
+        print("api_token", api_token)
+        let parameters = ["api_token": api_token,
+                          "game_id": "\(Game.Coloring.rawValue)"]
+        AF.upload(multipartFormData: { multipartFormData in
+            parameters.forEach { (key: String, value: String) in
+                multipartFormData.append(value.data(using: .utf8) ?? Data(), withName: key)
+            }
+            if let picture = picture {
+                multipartFormData.append(picture, withName: "picture", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
+            }
+            
+        }, to: UrlRequestEnum.SaveImage.url, method: .post)
+        .validate()
+        .responseDecodable(of: ServerResponseModel<String>.self) { data in
+            if let data = data.value {
+                completion(data)
+            }
+        }
+    }
+    
+    func getImageHistory(api_token: String, game_id: Int, completion: @escaping(ServerResponseModel<ImageHistoryModel>) -> Void) {
+        let params =  ["api_token": api_token,
+                       "game_id": game_id] as? Parameters
+        AF.request(UrlRequestEnum.ImageHistory.url, method: .post, parameters: params).validate().responseDecodable(of: ServerResponseModel<ImageHistoryModel>.self) { data in
+            if let data = data.value {
+                completion(data)
+            }
+        }
+    }
+    
 }

@@ -17,9 +17,26 @@ extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    func showSuccessAlert(for alert: String) {
+    func showCustomAlert(title: String, message: String, handler: (() -> ())? = nil) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let alertAction = UIAlertAction(title: "نعم", style: .default, handler: {_ in
+            if let handler = handler {
+                handler()
+            }
+        })
+        let cancelAction = UIAlertAction(title: "لا", style: .cancel, handler: nil)
+        alertController.addAction(alertAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func showSuccessAlert(for alert: String, handler: (() -> ())? = nil) {
         let alertController = UIAlertController(title: "نجاح", message: alert, preferredStyle: UIAlertController.Style.alert)
-        let alertAction = UIAlertAction(title: "تمام ", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: "تمام ", style: .default, handler: {_ in
+            if let handler = handler {
+                handler()
+            }
+        })
         alertController.addAction(alertAction)
         present(alertController, animated: true, completion: nil)
     }
@@ -79,11 +96,12 @@ extension UIViewController {
         }
     }
     
-    func getProfile() {
+    func getProfile(completion:@escaping (ProfileModel) -> ()) {
         if let token = AccountManager.shared.token, let id = AccountManager.shared.profile?.id {
             Authentication.shared.getProfile(api_token: token, user_id: id) { res in
                 if let data = res.data, res.result == true {
                     AccountManager.shared.profile = data
+                    completion(data)
                 }
             }
         }

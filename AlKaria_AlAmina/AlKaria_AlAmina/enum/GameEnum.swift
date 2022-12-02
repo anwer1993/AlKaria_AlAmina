@@ -17,3 +17,10 @@ enum GameEnum: String {
     case seventhGame = "seventh_game"
     case eighGame = "eight_game"
 }
+
+
+enum Game: Int {
+    case Coloring = 1
+    case Puzzle = 2
+    case ColorDifferent = 3
+}

@@ -52,7 +52,7 @@ class ScoreVc: UIViewController, Storyboarded {
     }
 
     @IBAction func backBtnDidTapped(_ sender: Any) {
-        Router.shared.present(screen: .Tabbar(selectedIndex: 0), modalePresentatioinStyle: .fullScreen, completion: nil)
+        Router.shared.present(screen: .Tabbar(selectedIndex: 2), modalePresentatioinStyle: .fullScreen, completion: nil)
     }
     
 

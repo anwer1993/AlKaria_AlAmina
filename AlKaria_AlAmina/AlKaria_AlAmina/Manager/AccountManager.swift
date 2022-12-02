@@ -22,7 +22,23 @@ class AccountManager {
         }
     }
     
-    var profile: ProfileModel?
+    var profile: ProfileModel? {
+        get {
+            if let savedProfile = UserDefaults.standard.object(forKey: "savedProfile") as? Data {
+                if let loadedPerson = try? JSONDecoder().decode(ProfileModel.self, from: savedProfile) {
+                    print(loadedPerson.name)
+                    return loadedPerson
+                }
+                return nil
+            }
+            return nil
+        }
+        set {
+            if let encoded = try? JSONEncoder().encode(newValue) {
+                UserDefaults.standard.set(encoded, forKey: "savedProfile")
+            }
+        }
+    }
     
     var settingsModel: SettingsModel?
 }

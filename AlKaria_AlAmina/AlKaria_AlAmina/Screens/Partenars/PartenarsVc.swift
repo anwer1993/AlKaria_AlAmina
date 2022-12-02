@@ -28,7 +28,7 @@ class PartenarsVc: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
-        getProfile()
+        getProfile(completion: {_ in})
     }
     
     override func viewWillAppear(_ animated: Bool) {

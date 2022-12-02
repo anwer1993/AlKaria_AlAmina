@@ -19,6 +19,9 @@ enum UrlRequestEnum {
     case SendMessage
     case EditProfile
     case Profile
+    case SaveImage
+    case ImageHistory
+    case GetMessages
     
     var url: String  {
         switch self {
@@ -42,6 +45,12 @@ enum UrlRequestEnum {
             return "\(Utilities.baseUrl)api/v1/profil/edit/ar"
         case .Profile:
             return "\(Utilities.baseUrl)api/v1/profil/ar"
+        case .SaveImage:
+            return "\(Utilities.baseUrl)api/v1/picture/add/ar"
+        case .ImageHistory:
+            return "\(Utilities.baseUrl)api/v1/picture/list/ar"
+        case .GetMessages:
+            return "\(Utilities.baseUrl)api/v1/messages/ar"
         }
     }
 }

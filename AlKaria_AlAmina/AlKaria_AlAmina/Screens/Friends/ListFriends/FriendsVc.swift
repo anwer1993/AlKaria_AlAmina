@@ -25,7 +25,8 @@ class FriendsVc: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
-        getProfile()
+        getProfile(completion: {_ in
+        })
         // Do any additional setup after loading the view.
     }
     
@@ -72,6 +73,7 @@ extension FriendsVc: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        Router.shared.present(screen: .Chat(friend: friends[indexPath.row]), modalePresentatioinStyle: .fullScreen, completion: nil)
     }
     
 }

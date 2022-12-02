@@ -103,6 +103,9 @@ extension UIColor {
     @nonobjc class var lightPink: UIColor {
         return UIColor(red: 1.0, green: 242.0 / 255.0, blue: 246.0 / 255.0, alpha: 1.0)
     }
+    @nonobjc class var amethyst: UIColor {
+        return UIColor(red: 160.0 / 255.0, green: 94.0 / 255.0, blue: 210.0 / 255.0, alpha: 1.0)
+    }
     
 }
 

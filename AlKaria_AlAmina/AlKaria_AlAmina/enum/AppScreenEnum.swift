@@ -26,7 +26,9 @@ enum AppScreen: INaviagtion{
     case ListPuzzle
     case Puzzle(game: GameEnum)
     case ColoringGameList
-    case ColoringGame
+    case ColoringGame(gameImageModel: ColoringGameMenuModel)
     case ColorDifferentGame
     case ScoreScreen(score: Int, bestScore: Int)
+    case Historique(game_id: Int)
+    case Chat(friend: FriendModel)
 }
